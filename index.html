@@ -1,0 +1,66 @@
+<ul id="menu">
+  <li>Книги</li>
+  <li>DVD
+      <ul>
+          <li>Отечественные 
+              <ul>
+                  <li>Детективы 
+                  </li>
+                  <li>Научная фантастика 
+                  </li>
+                  <li>Зарубежные 
+                      <ul>
+                          <li>SubSubSubmenu 3</li>
+                          <li>SubSubSubmenu 4</li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+          <li>Популярные</li>
+      </ul>
+  </li>
+  
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const menuItems = document.querySelectorAll('#menu li');
+
+  menuItems.forEach(item => {
+      item.addEventListener('click', function() {
+          if (item.querySelector('ul')) {
+              item.querySelector('ul').classList.toggle('show');
+          } else {
+              alert('Ссылка');
+          }
+      });
+  });
+});
+
+</script>
+
+<style>
+  li {
+    background-color: rgb(131, 5, 5);
+    width: 60px;
+  }
+  #menu ul {
+      display: none;
+  }
+  #menu ul.show {
+      display: block;
+  }
+
+  #menu ul ul {
+      display: none;
+  }
+  #menu ul ul.show {
+      display: block;
+  }
+
+  #menu ul ul ul {
+      display: none;
+  }
+  #menu ul ul ul.show {
+      display: block;
+  }
+</style>
